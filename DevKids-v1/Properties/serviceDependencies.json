@@ -3,15 +3,6 @@
     "mssql2": {
       "type": "mssql",
       "connectionId": "serverdevkids.database.windows.net"
-    },
-    "mssql1": {
-      "type": "mssql",
-      "connectionId": "devkidsserver.database.windows.net"
-    },
-    "secrets1": {
-      "type": "secrets",
-      "connectionId": "VaultUri",
-      "dynamicId": null
     }
   }
 }
