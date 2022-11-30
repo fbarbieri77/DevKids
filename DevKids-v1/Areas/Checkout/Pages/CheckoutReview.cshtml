@@ -1,0 +1,57 @@
+﻿@page
+@model DevKids_v1.Areas.Checkout.Pages.CheckoutReviewModel
+@{
+    ViewData["Title"] = "Purchased Items";
+}
+
+<h1>@ViewData["Title"]</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchases[0].ProjectTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchases[0].DateIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchases[0].DateOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchases[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchases[0].ConfirmPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchases[0].HasAccess)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Purchases)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConfirmPayment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasAccess)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

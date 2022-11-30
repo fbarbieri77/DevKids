@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@using Microsoft.AspNetCore.Identity
+@using DevKids_v1.Areas.Identity.Data
+@inject SignInManager<RazorPagesUser> SignInManager
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div>Marketing here</div>
+
+<div>
+    @if (SignInManager.IsSignedIn(User))
+    {
+    <h5>My Projects</h5>
+    <div class="row">
+        @foreach (var item in Model.UserThumbnails)
+        {
+            <div class="col-md-4">
+                <a asp-area="Lecture" asp-page="/Index" asp-route-id="@item.ProjectId">
+                    <img class="logo-limits" src="@item.Path" />
+                </a>
+                <label>@item.Title</label>
+            </div>
+        }
+    </div>
+    <hr />
+    <h5>More Projects</h5>
+    <div class="row">
+        @foreach (var item in Model.OtherThumbnails)
+        {
+            <div class="col-md-4">
+            <a asp-area="Checkout" asp-page="/CheckoutStart" asp-route-id="@item.ProjectId">
+                <img class="logo-limits" src="@item.Path"/>
+            </a>
+                <label>@item.Title</label>
+            </div>
+        }
+    </div>
+    }
+    else
+    {
+        <div>Sign up to see the available projects!</div>
+    }
+    
+</div>

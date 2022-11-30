@@ -1,0 +1,63 @@
+﻿@page
+@model DevKids_v1.Pages.ProjectResources.IndexModel
+
+@{
+    ViewData["Title"] = "Projects Resources";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectResource[0].ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectResource[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectResource[0].FileType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectResource[0].SectionTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectResource[0].SectionOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectResource[0].InSectionOrder)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ProjectResource) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SectionTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SectionOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InSectionOrder)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

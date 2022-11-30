@@ -1,0 +1,81 @@
+﻿@page
+@model DevKids_v1.Pages.Projects.IndexModel
+
+@{
+    ViewData["Title"] = "My projects";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<p>
+    <a class="nav-link text-light" asp-area="" asp-page="Create">Create New</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].CodeLanguage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].TeachLanguage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].IsOpenToVote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].IsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Project) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodeLanguage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeachLanguage)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOpenToVote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

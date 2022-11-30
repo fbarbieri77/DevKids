@@ -1,0 +1,74 @@
+﻿@page
+@model DevKids_v1.Areas.UserResources.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>UserResource</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserResource.UserId" class="control-label"></label>
+                <input asp-for="UserResource.UserId" class="form-control" />
+                <span asp-validation-for="UserResource.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserResource.ProjectId" class="control-label"></label>
+                <input asp-for="UserResource.ProjectId" class="form-control" />
+                <span asp-validation-for="UserResource.ProjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserResource.Title" class="control-label"></label>
+                <input asp-for="UserResource.Title" class="form-control" />
+                <span asp-validation-for="UserResource.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserResource.FileName" class="control-label"></label>
+                <input asp-for="UserResource.FileName" class="form-control" />
+                <span asp-validation-for="UserResource.FileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserResource.FileType" class="control-label"></label>
+                <input asp-for="UserResource.FileType" class="form-control" />
+                <span asp-validation-for="UserResource.FileType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserResource.SectionTitle" class="control-label"></label>
+                <input asp-for="UserResource.SectionTitle" class="form-control" />
+                <span asp-validation-for="UserResource.SectionTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserResource.SectionOrder" class="control-label"></label>
+                <input asp-for="UserResource.SectionOrder" class="form-control" />
+                <span asp-validation-for="UserResource.SectionOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserResource.InSectionOrder" class="control-label"></label>
+                <input asp-for="UserResource.InSectionOrder" class="form-control" />
+                <span asp-validation-for="UserResource.InSectionOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="UserResource.HasCompleted" /> @Html.DisplayNameFor(model => model.UserResource.HasCompleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

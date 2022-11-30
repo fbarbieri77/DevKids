@@ -1,0 +1,60 @@
+﻿@page
+@model DevKids_v1.Areas.Wallet.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<h4>Purchase</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Purchase.Id" />
+            <input type="hidden" asp-for="Valid.Duration" />
+            <div class="form-group">
+                <label asp-for="Purchase.UserId" class="control-label"></label>
+                <input asp-for="Purchase.UserId" class="form-control" />
+                <span asp-validation-for="Purchase.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.ProjectId" class="control-label"></label>
+                <input asp-for="Purchase.ProjectId" class="form-control" />
+                <span asp-validation-for="Purchase.ProjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.DateIn" class="control-label"></label>
+                <input asp-for="Purchase.DateIn" class="form-control" />
+                <span asp-validation-for="Purchase.DateIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.DateOut" class="control-label"></label>
+                <input asp-for="Purchase.DateOut" class="form-control" />
+                <span asp-validation-for="Purchase.DateOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valid.Price" class="control-label"></label>
+                <input asp-for="Valid.Price" class="form-control" />
+                <span asp-validation-for="Valid.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.PaymentId" class="control-label"></label>
+                <input asp-for="Purchase.PaymentId" class="form-control" />
+                <span asp-validation-for="Purchase.PaymentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Wallet">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

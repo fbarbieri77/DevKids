@@ -1,0 +1,16 @@
+﻿@page
+@model DevKids_v1.Areas.Lecture.Pages.VideoModel
+@{
+    ViewData["Title"] = "Lecture";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Project</h4>
+<hr />
+
+<div class="modal-body row">
+    <div class="col-md">
+        <video src="@Model.FilePath" controls />
+    </div>
+</div>

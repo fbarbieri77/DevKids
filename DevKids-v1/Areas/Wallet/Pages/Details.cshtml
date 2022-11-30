@@ -1,0 +1,78 @@
+﻿@page
+@model DevKids_v1.Areas.Wallet.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div>
+    <h4>Purchase</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.UserId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.UserId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.ProjectId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.ProjectId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.PayerId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.PayerId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.ProjectTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.ProjectTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.DateIn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.DateIn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.DateOut)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.DateOut)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.PaymentId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.PaymentId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.RefundId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.RefundId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.HasAccess)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.HasAccess)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Purchase?.Id">Edit</a> |
+    <a asp-page="./Wallet">Back to List</a>
+</div>

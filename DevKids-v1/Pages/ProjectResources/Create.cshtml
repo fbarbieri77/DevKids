@@ -1,0 +1,130 @@
+﻿@page
+@model DevKids_v1.Pages.ProjectResources.CreateModel
+
+@{
+    ViewData["Title"] = "Upload Resources";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Project Resource</h4>
+
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentProjectResources[0].ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentProjectResources[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentProjectResources[0].FileType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentProjectResources[0].SectionTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentProjectResources[0].SectionOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentProjectResources[0].InSectionOrder)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CurrentProjectResources)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SectionTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SectionOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InSectionOrder)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+}
+    </tbody>
+</table>
+<p></p>
+<p>Add new resource</p>
+<div class="row">
+    <div class="col-md-4">
+        <form enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="_projectId" />
+            <div class="form-group">
+                <label asp-for="FileUpload.FormFile" class="control-label">Accepted files: .mp4, .txt, .zip</label>
+                <input asp-for="FileUpload.FormFile" type="file" />
+                <span asp-validation-for="FileUpload.FormFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectResource.Title" class="control-label"></label>
+                <input asp-for="ProjectResource.Title" class="form-control" />
+                <span asp-validation-for="ProjectResource.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FileTypeChoice" class="control-label"></label>>
+                <select asp-for="FileTypeChoice" asp-items="Html.GetEnumSelectList<DevKids_v1.MyEnum.FileTypeEnum>()" class="form-control">
+                    <option value="">Choose a type</option>
+                </select>
+                <span asp-validation-for="FileTypeChoice" class="text-danger"></span>
+                &nbsp;
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectResource.SectionTitle" class="control-label"></label>
+                <input asp-for="ProjectResource.SectionTitle" class="form-control" />
+                <span asp-validation-for="ProjectResource.SectionTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectResource.SectionOrder" class="control-label"></label>
+                <input asp-for="ProjectResource.SectionOrder" class="form-control" />
+                <span asp-validation-for="ProjectResource.SectionOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectResource.InSectionOrder" class="control-label"></label>
+                <input asp-for="ProjectResource.InSectionOrder" class="form-control" />
+                <span asp-validation-for="ProjectResource.InSectionOrder" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input asp-page-handler="Upload" type="submit" value="Upload" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<p class="result">
+    @Model.Result
+</p>
+
+<div>
+    <a asp-page="./Index">Back to List of Resources</a>
+</div>
+<div>
+    <a asp-area="" asp-page="/Projects/Index">Back to List of Projects</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

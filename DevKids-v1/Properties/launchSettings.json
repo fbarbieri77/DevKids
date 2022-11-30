@@ -1,0 +1,46 @@
+{
+  "profiles": {
+    "DevKids_v1": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "VaultUri": "https://devkidssecrets.vault.azure.net/",
+        "AZURE_USERNAME": "barbieri.f@gmail.com"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7187;http://localhost:5187",
+      "hotReloadEnabled": false
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "VaultUri": "https://devkidssecrets.vault.azure.net/",
+        "AZURE_USERNAME": "barbieri.f@gmail.com"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "VaultUri": "https://devkidssecrets.vault.azure.net/",
+        "AZURE_USERNAME": "barbieri.f@gmail.com",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:41387",
+      "ASPNETCORE_ENVIRONMENT": "Development",
+      "sslPort": 44361
+    }
+  }
+}

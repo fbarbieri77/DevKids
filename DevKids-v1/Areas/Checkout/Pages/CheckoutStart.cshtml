@@ -1,0 +1,61 @@
+﻿@page
+@model DevKids_v1.Areas.Checkout.Pages.CheckoutStartModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Purchase</h4>
+<hr />
+
+<div>
+    <h4>Purchase</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Project.CodeLanguage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Project.CodeLanguage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Project.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Project.Price)
+        </dd>
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Project.Id" />
+                <input type="hidden" asp-for="Project.Name" />
+                <input type="hidden" asp-for="Project.Price" />
+                <input type="hidden" asp-for="Project.Description" />
+                <input type="hidden" asp-for="Project.CodeLanguage" />
+                <input type="hidden" asp-for="Project.TeachLanguage" />
+                <input type="hidden" asp-for="Project.IsOpenToVote" />
+                <input type="hidden" asp-for="Project.IsActive" />
+                <div class="form-group">
+                    <input type="submit" value="Buy with PayPal" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </dl>
+</div>
+<div>
+    <a asp-area="" asp-page="./Index">Back to Home Page</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
