@@ -19,11 +19,13 @@
     <div class="row">
         @foreach (var item in Model.UserThumbnails)
         {
-            <div class="col-md-4">
-                <a asp-area="Lecture" asp-page="/Index" asp-route-id="@item.ProjectId">
-                    <img class="logo-limits" src="@item.Path" />
-                </a>
-                <label>@item.Title</label>
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <a asp-area="Lecture" asp-page="/Index" asp-route-id="@item.ProjectId">
+                        <img class="img-thumbnail logo-limits" src="@item.Path" />
+                    </a>
+                    <h4>@item.Title</h4>
+                </div>
             </div>
         }
     </div>
@@ -32,11 +34,13 @@
     <div class="row">
         @foreach (var item in Model.OtherThumbnails)
         {
-            <div class="col-md-4">
-            <a asp-area="Checkout" asp-page="/CheckoutStart" asp-route-id="@item.ProjectId">
-                <img class="logo-limits" src="@item.Path"/>
-            </a>
-                <label>@item.Title</label>
+            <div class="col-md-4 col-sm-6">
+                 <div class="thumbnail">
+                    <a asp-area="Checkout" asp-page="/CheckoutStart" asp-route-id="@item.ProjectId">
+                        <img class="img-thumbnail logo-limits" src="@item.Path" />
+                    </a>
+                    <h4>@item.Title</h4>
+                </div>
             </div>
         }
     </div>
