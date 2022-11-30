@@ -8,14 +8,75 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h2 class="display-4" style="color:white">Cursos de Programação para Crianças e Adolescentes!</h2>
 </div>
-<div>Marketing here</div>
+<p />
+<p />
+<p />
+
+<div class="row">
+    <div class="col-md-4 col-sm-4 d-flex">
+        <div class="banner-body align-self-stretch">
+            <div class="banner-head">
+                <h5>Por que a DevKids?</h5>
+            </div>
+            <ul>
+                <li>Fácil de começar</li>
+                <li>Projetos simples que motivam o processo de aprendizado</li>
+                <li>Foco em habilidades essenciais de programação</li>
+                <ul>
+                    <li>Sintaxe da linguagem</li>
+                    <li>Lógica</li>
+                    <li>Estrutura do programa</li>
+                </ul>
+            </ul>
+            <strong style="color:orange">   ....Foco no Iniciante!</strong>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 d-flex">
+        <div class="banner-body align-self-stretch">
+            <div class="banner-head">
+                <h5>Benefícios</h5>
+            </div>
+            <ul>
+                <li>Melhora da capacidade de atenção</li>
+                <li>Aumento da compreensão lógica</li>
+                <li>Aprendizado de ferramentas básicas para uma potencial profissão</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 d-flex">
+        <div class="banner-body align-self-stretch">
+            <div class="banner-head">
+                <h5>Processo de Aprendizado</h5>
+            </div>
+            <ul>
+                <li>Programação guiada com vídeo-aulas</li>
+                <li>Implementar ajustes no código sozinho (desafios)</li>
+                <li>Repetir o processo com novos projetos</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<p/>
+<p />
+<hr />
+<div class="row">
+    <h5 style="color:white">Sobre o Instrutor</h5>
+    <hr/>
+    <p class="text-justify">
+        Meu nome é Fabio e tenho mais de 38 anos de experiência com programação.
+        Sou formado em engenharia aeronáutica pelo ITA e tenho doutorado em engenharia de sistemas pela USP.
+    </p>
+    <a href="https://www.linkedin.com/in/fabiobarbieri77/">Abrir Perfil no LinkedIn</a>
+</div>
+
 
 <div>
     @if (SignInManager.IsSignedIn(User))
     {
-    <h5>My Projects</h5>
+    <h3>Projetos Liberados</h3>
     <div class="row">
         @foreach (var item in Model.UserThumbnails)
         {
@@ -30,7 +91,7 @@
         }
     </div>
     <hr />
-    <h5>More Projects</h5>
+    <h3>Projetos Disponíveis</h3>
     <div class="row">
         @foreach (var item in Model.OtherThumbnails)
         {
@@ -47,7 +108,8 @@
     }
     else
     {
-        <div>Sign up to see the available projects!</div>
+        <p/>
+        <div>Crie uma conta para ver os projetos disponíveis!</div>
     }
     
 </div>
