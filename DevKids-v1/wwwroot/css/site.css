@@ -33,3 +33,17 @@ navbar {
     background-repeat: no-repeat;
     overflow: hidden;
 }
+
+.banner-head {
+    text-align: center;
+    color: black;
+    background-color:lightskyblue;
+    height:30px;
+    margin-bottom:15px;
+}
+
+.banner-body {
+    color: dodgerblue;
+    border: groove;
+    border-color: lightskyblue;
+}

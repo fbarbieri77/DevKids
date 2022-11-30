@@ -39,7 +39,6 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:41387",
-      "ASPNETCORE_ENVIRONMENT": "Development",
       "sslPort": 44361
     }
   }
