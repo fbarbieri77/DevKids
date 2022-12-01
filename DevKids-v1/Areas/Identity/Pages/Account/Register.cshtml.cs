@@ -80,7 +80,7 @@ namespace DevKids_v1.Areas.Identity.Pages.Account
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirme a senha")]
-            [Compare("Senha", ErrorMessage = "As senhas não iguais.")]
+            [Compare("Password", ErrorMessage = "As senhas não iguais.")]
             public string ConfirmPassword { get; set; } = string.Empty;
         }
 
