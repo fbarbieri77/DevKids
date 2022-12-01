@@ -7,23 +7,18 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h2 class="display-4" style="color:white">Cursos de Programação para Crianças e Adolescentes!</h2>
-</div>
-<p />
-<p />
-<p />
+<div class="banner-body shadow bg-gradient">Cursos de Programação para Crianças e Adolescentes!</div>
 
 <div class="row">
     <div class="col-md-4 col-sm-4 d-flex">
-        <div class="banner-body align-self-stretch">
-            <div class="banner-head">
-                <h5>Por que a DevKids?</h5>
+        <div class="align-self-stretch shadow bg-gradient rounded">
+            <div class="banner-head bg-gradient rounded">
+                <h6>Por que a DevKids?</h6>
             </div>
             <ul>
                 <li>Fácil de começar</li>
                 <li>Projetos simples que motivam o processo de aprendizado</li>
-                <li>Foco em habilidades essenciais de programação</li>
+                <li>Treino em habilidades essenciais de programação</li>
                 <ul>
                     <li>Sintaxe da linguagem</li>
                     <li>Lógica</li>
@@ -34,9 +29,9 @@
         </div>
     </div>
     <div class="col-md-4 col-sm-4 d-flex">
-        <div class="banner-body align-self-stretch">
-            <div class="banner-head">
-                <h5>Benefícios</h5>
+        <div class="align-self-stretch shadow bg-gradient rounded">
+            <div class="banner-head bg-gradient rounded">
+                <h6>Benefícios</h6>
             </div>
             <ul>
                 <li>Melhora da capacidade de atenção</li>
@@ -46,9 +41,9 @@
         </div>
     </div>
     <div class="col-md-4 col-sm-4 d-flex">
-        <div class="banner-body align-self-stretch">
-            <div class="banner-head">
-                <h5>Processo de Aprendizado</h5>
+        <div class="align-self-stretch shadow bg-gradient rounded">
+            <div class="banner-head bg-gradient rounded">
+                <h6>Processo de Aprendizado</h6>
             </div>
             <ul>
                 <li>Programação guiada com vídeo-aulas</li>
@@ -59,19 +54,20 @@
     </div>
 </div>
 
-<p/>
-<p />
-<hr />
-<div class="row">
-    <h5 style="color:white">Sobre o Instrutor</h5>
-    <hr/>
-    <p class="text-justify">
-        Meu nome é Fabio e tenho mais de 38 anos de experiência com programação.
-        Sou formado em engenharia aeronáutica pelo ITA e tenho doutorado em engenharia de sistemas pela USP.
-    </p>
-    <a href="https://www.linkedin.com/in/fabiobarbieri77/">Abrir Perfil no LinkedIn</a>
-</div>
+<div class="space-sm"></div>
 
+<div>
+    <div class="shadow bg-gradient rounded">
+        <div class="banner-head bg-gradient rounded">
+            <h6>Sobre o Instrutor</h6>
+        </div>
+        <p class="text-justify" style="padding:15px">
+            Meu nome é Fabio e tenho mais de 38 anos de experiência com programação.
+            Sou formado em engenharia aeronáutica pelo ITA e tenho doutorado em engenharia de sistemas pela USP.
+        </p>
+        <a href="https://www.linkedin.com/in/fabiobarbieri77/">Abrir Perfil no LinkedIn</a>
+    </div>
+</div>
 
 <div>
     @if (SignInManager.IsSignedIn(User))

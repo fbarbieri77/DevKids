@@ -35,15 +35,35 @@ navbar {
 }
 
 .banner-head {
+    font-size:medium;
     text-align: center;
     color: black;
-    background-color:lightskyblue;
-    height:30px;
-    margin-bottom:15px;
+    background-color: dodgerblue;
+    margin-bottom: 15px;
+    padding: 10px 5px 5px 5px
 }
 
 .banner-body {
-    color: dodgerblue;
-    border: groove;
-    border-color: lightskyblue;
+    font-size:xx-large;
+    color: white;
+    text-align: center;
+    background-color: darkslategrey;
+    margin: 0px 0px 100px 0px;
+    padding: 40px 15px 40px 15px
+}
+
+.space-sm {
+    margin:40px 0px 0px 0px;
+}
+
+.space {
+    margin: 80px 0px 0px 0px;
+}
+
+.space-lg {
+    margin: 160px 0px 0px 0px;
+}
+
+.space-xl {
+    margin: 240px 0px 0px 0px;
 }

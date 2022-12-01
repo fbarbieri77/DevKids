@@ -1,0 +1,140 @@
+create order
+
+{
+  "id": "0HA41881048893355",
+  "status": "CREATED",
+  "links": [
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0HA41881048893355",
+      "rel": "self",
+      "method": "GET"
+    },
+    {
+      "href": "https://www.sandbox.paypal.com/checkoutnow?token=0HA41881048893355",
+      "rel": "approve",
+      "method": "GET"
+    },
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0HA41881048893355",
+      "rel": "update",
+      "method": "PATCH"
+    },
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0HA41881048893355/capture",
+      "rel": "capture",
+      "method": "POST"
+    }
+  ]
+}
+
+
+payment response
+
+{
+  "id": "0HA41881048893355",
+  "status": "COMPLETED",
+  "payment_source": {
+    "paypal": {
+      "email_address": "fabio.barbieri777@outlook.com",
+      "account_id": "Q24BHHW4VH7TC",
+      "name": {
+        "given_name": "Fabio",
+        "surname": "Barbieri"
+      },
+      "address": {
+        "country_code": "BR"
+      }
+    }
+  },
+  "purchase_units": [
+    {
+      "reference_id": "PUHF",
+      "shipping": {
+        "name": {
+          "full_name": "Fabio Barbieri"
+        },
+        "address": {
+          "address_line_1": "Avenida Imperatriz Leopoldina, 1110",
+          "address_line_2": "Vila Leopoldina",
+          "admin_area_2": "São Paulo",
+          "admin_area_1": "SP",
+          "postal_code": "05305-001",
+          "country_code": "BR"
+        }
+      },
+      "payments": {
+        "captures": [
+          {
+            "id": "2JW738833V2447320",
+            "status": "COMPLETED",
+            "amount": {
+              "currency_code": "USD",
+              "value": "100.00"
+            },
+            "final_capture": true,
+            "seller_protection": {
+              "status": "ELIGIBLE",
+              "dispute_categories": [
+                "ITEM_NOT_RECEIVED",
+                "UNAUTHORIZED_TRANSACTION"
+              ]
+            },
+            "seller_receivable_breakdown": {
+              "gross_amount": {
+                "currency_code": "USD",
+                "value": "100.00"
+              },
+              "paypal_fee": {
+                "currency_code": "USD",
+                "value": "5.48"
+              },
+              "net_amount": {
+                "currency_code": "USD",
+                "value": "94.52"
+              }
+            },
+            "links": [
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/2JW738833V2447320",
+                "rel": "self",
+                "method": "GET"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/2JW738833V2447320/refund",
+                "rel": "refund",
+                "method": "POST"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0HA41881048893355",
+                "rel": "up",
+                "method": "GET"
+              }
+            ],
+            "create_time": "2022-11-26T16:59:05Z",
+            "update_time": "2022-11-26T16:59:05Z"
+          }
+        ]
+      }
+    }
+  ],
+  "payer": {
+    "name": {
+      "given_name": "Fabio",
+      "surname": "Barbieri"
+    },
+    "email_address": "fabio.barbieri777@outlook.com",
+    "payer_id": "Q24BHHW4VH7TC",
+    "address": {
+      "country_code": "BR"
+    }
+  },
+  "links": [
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/0HA41881048893355",
+      "rel": "self",
+      "method": "GET"
+    }
+  ]
+}
+
+
