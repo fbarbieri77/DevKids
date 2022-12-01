@@ -12,27 +12,24 @@
     <li class="nav-item">
         <a  id="manage" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Olá @fullName!</a>
     </li>
-    @if (User.HasClaim("IsAdmin", bool.TrueString))
-    {
-        <ul class="navbar-nav">
-            <strong>Admin Menu</strong>
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="" asp-page="/Projects/Index">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="" asp-page="/ProjectResources/Index">Resources</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="Wallet" asp-page="/Wallet">Wallet</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" asp-area="UserResources" asp-page="/Index">Users Resources</a>
-            </li>
-        </ul>
-    }
     <li class="nav-item">
         <a class="nav-link text-light" asp-area="Checkout" asp-page="/CheckoutReview">Minhas compras</a>
     </li>
+    @if (SignInManager.IsSignedIn(User) && User.HasClaim("IsAdmin", bool.TrueString))
+    {
+        <li class="nav-item">
+            <a class="nav-link" style="color:green" asp-area="" asp-page="/Projects/Index">Projects</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:green" asp-area="" asp-page="/ProjectResources/Index">Resources</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:green" asp-area="Wallet" asp-page="/Wallet">Wallet</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="UserResources" asp-page="/Index">Users Resources</a>
+        </li>
+    }
     <li class="nav-item">
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" >
             <button  type="submit" class="nav-link btn btn-link text-light">Sair</button>
@@ -49,3 +46,4 @@ else
     </li>
 }
 </ul>
+

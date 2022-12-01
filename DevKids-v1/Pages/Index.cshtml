@@ -72,27 +72,35 @@
 <div>
     @if (SignInManager.IsSignedIn(User))
     {
-    <h3>Projetos Liberados</h3>
-    <div class="row">
-        @foreach (var item in Model.UserThumbnails)
-        {
-            <div class="col-md-4 col-sm-6">
-                <div class="thumbnail">
-                    <a asp-area="Lecture" asp-page="/Index" asp-route-id="@item.ProjectId">
-                        <img class="img-thumbnail logo-limits" src="@item.Path" />
-                    </a>
-                    <h4>@item.Title</h4>
+    <div class="shadow bg-gradient rounded">
+        <div class="box-head bg-gradient rounded">
+        <h4>Cursos Adquiridos</h4>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.UserThumbnails)
+            {
+                <div class="col-md-2 col-sm-2">
+                    <div class="img-thumbnail">
+                        <a asp-area="Lecture" asp-page="/Index" asp-route-id="@item.ProjectId">
+                            <img class="img-thumbnail logo-limits" src="@item.Path" />
+                        </a>
+                        <h6>@item.Title</h6>
+                    </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
-    <hr />
-    <h3>Projetos Disponíveis</h3>
+    
+    <div class="shadow bg-gradient rounded">
+        <div class="box-head bg-gradient rounded">
+            <h4>Cursos Disponíveis</h4>
+        </div>
+    </div>
     <div class="row">
         @foreach (var item in Model.OtherThumbnails)
         {
-            <div class="col-md-4 col-sm-6">
-                 <div class="thumbnail">
+            <div class="col-md-2 col-sm-2">
+                    <div class="img-thumbnail">
                     <a asp-area="Checkout" asp-page="/CheckoutStart" asp-route-id="@item.ProjectId">
                         <img class="img-thumbnail logo-limits" src="@item.Path" />
                     </a>
@@ -104,8 +112,7 @@
     }
     else
     {
-        <p/>
-        <div>Crie uma conta para ver os projetos disponíveis!</div>
+        <div class="space">Crie uma conta para ver os projetos disponíveis!</div>
     }
     
 </div>
