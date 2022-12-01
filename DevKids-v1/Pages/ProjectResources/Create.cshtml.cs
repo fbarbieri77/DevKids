@@ -39,7 +39,7 @@ namespace DevKids_v1.Pages.ProjectResources
         public FileTypeEnum FileTypeChoice { get; set; }
 
         [BindProperty]
-        public string _projectId { get; set; }
+        public int _projectId { get; set; }
 
         [BindProperty]
         public IList<ProjectResource> CurrentProjectResources { get; set; } = default!;
@@ -52,7 +52,7 @@ namespace DevKids_v1.Pages.ProjectResources
             FileTypeChoice = FileTypeEnum.Resource;
         }
 
-        public async Task<IActionResult> OnGet(string? id)
+        public async Task<IActionResult> OnGet(int? id)
         {
             if (_context.ProjectResources != null && id != null)
             {
@@ -62,7 +62,7 @@ namespace DevKids_v1.Pages.ProjectResources
             
             if (id != null)
             {
-                _projectId = (string)id;
+                _projectId = (int)id;
             }
 
             return Page();

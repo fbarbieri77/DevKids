@@ -24,7 +24,7 @@ namespace DevKids_v1.Areas.Checkout.Pages
             Project = new Project();
         }
 
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
             {

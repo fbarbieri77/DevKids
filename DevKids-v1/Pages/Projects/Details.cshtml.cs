@@ -22,7 +22,7 @@ namespace DevKids_v1.Pages.Projects
             _context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Project == null)
             {

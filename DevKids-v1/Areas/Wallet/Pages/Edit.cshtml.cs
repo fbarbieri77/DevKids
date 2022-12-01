@@ -31,7 +31,7 @@ namespace DevKids_v1.Areas.Wallet.Pages
             Valid = new ValidationHelper.Project();
         }
 
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Purchase == null)
             {
@@ -82,7 +82,7 @@ namespace DevKids_v1.Areas.Wallet.Pages
             return RedirectToPage("./Wallet");
         }
 
-        private bool PurchaseExists(string id)
+        private bool PurchaseExists(int id)
         {
           return _context.Purchase.Any(e => e.Id == id);
         }

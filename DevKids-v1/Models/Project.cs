@@ -8,7 +8,7 @@ namespace DevKids_v1.Models
 {
     public class Project
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(30)]

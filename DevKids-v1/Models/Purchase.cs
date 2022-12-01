@@ -4,9 +4,9 @@ namespace DevKids_v1.Models
 {
     public class Purchase
     {
-        public string Id { get; set; }
-        public string UserId { get; set; }
-        public string ProjectId { get; set; }
+        public int Id { get; set; }
+        public string UserId { get; set; } = string.Empty;
+        public int ProjectId { get; set; } 
         public string? PayerId { get; set; }
         public string? OrderId { get; set; }
         public string? PaymentId { get; set; }

@@ -32,7 +32,7 @@ namespace DevKids_v1.Pages.ProjectResources
             _context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.ProjectResources == null)
             {
@@ -81,7 +81,7 @@ namespace DevKids_v1.Pages.ProjectResources
             return RedirectToPage("./Index");
         }
 
-        private bool ProjectResourceExists(string id)
+        private bool ProjectResourceExists(int id)
         {
           return _context.ProjectResources.Any(e => e.Id == id);
         }

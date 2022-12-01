@@ -6,8 +6,8 @@ namespace DevKids_v1.Models
 {
     public class ProjectResource
     {
-        public string Id { get; set; }
-        public string ProjectId { get; set; }
+        public int Id { get; set; }
+        public int ProjectId { get; set; }
 
         [Required]
         [StringLength(40)]

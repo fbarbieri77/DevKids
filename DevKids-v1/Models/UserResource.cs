@@ -4,10 +4,10 @@ namespace DevKids_v1.Models
 {
     public class UserResource
     {
-        public string Id { get; set; }
-        public string UserId { get; set; }
-        public string ProjectId { get; set; }
-        public string ResourceId { get; set; }
+        public int Id { get; set; }
+        public string UserId { get; set; } = string.Empty;
+        public int ProjectId { get; set; }
+        public int ResourceId { get; set; }
 
         [Required]
         [StringLength(40)]

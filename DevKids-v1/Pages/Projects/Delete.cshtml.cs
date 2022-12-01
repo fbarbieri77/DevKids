@@ -27,7 +27,7 @@ namespace DevKids_v1.Pages.Projects
             _targetFilePath = config.GetValue<string>("StoredFilesPath");
         }
 
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Project == null)
             {
@@ -48,7 +48,7 @@ namespace DevKids_v1.Pages.Projects
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string? id)
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (id == null || _context.Project == null)
             {

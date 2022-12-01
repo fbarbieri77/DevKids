@@ -99,8 +99,11 @@ namespace DevKids_v1.Migrations
 
             modelBuilder.Entity("DevKids_v1.Models.Project", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CodeLanguage")
                         .IsRequired()
@@ -141,8 +144,11 @@ namespace DevKids_v1.Migrations
 
             modelBuilder.Entity("DevKids_v1.Models.ProjectResource", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("FileName")
                         .IsRequired()
@@ -157,9 +163,8 @@ namespace DevKids_v1.Migrations
                     b.Property<int>("InSectionOrder")
                         .HasColumnType("int");
 
-                    b.Property<string>("ProjectId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
 
                     b.Property<int>("SectionOrder")
                         .HasColumnType("int");
@@ -181,8 +186,11 @@ namespace DevKids_v1.Migrations
 
             modelBuilder.Entity("DevKids_v1.Models.Purchase", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
@@ -208,9 +216,8 @@ namespace DevKids_v1.Migrations
                     b.Property<string>("PaymentId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProjectId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ProjectTitle")
                         .IsRequired()
@@ -230,8 +237,11 @@ namespace DevKids_v1.Migrations
 
             modelBuilder.Entity("DevKids_v1.Models.UserResource", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("FileName")
                         .IsRequired()
@@ -249,13 +259,11 @@ namespace DevKids_v1.Migrations
                     b.Property<int>("InSectionOrder")
                         .HasColumnType("int");
 
-                    b.Property<string>("ProjectId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("ResourceId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ResourceId")
+                        .HasColumnType("int");
 
                     b.Property<int>("SectionOrder")
                         .HasColumnType("int");

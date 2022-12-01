@@ -29,7 +29,7 @@ namespace DevKids_v1.Areas.Lecture.Pages
             _targetFilePath = config.GetValue<string>("StoredFilesPath");
         }
 
-        public async Task<IActionResult> OnGet(string? id)
+        public async Task<IActionResult> OnGet(int? id)
         {
             if (id == null || _context.ProjectResources == null)
             {

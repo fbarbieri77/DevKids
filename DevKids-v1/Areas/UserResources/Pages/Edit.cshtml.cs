@@ -24,7 +24,7 @@ namespace DevKids_v1.Areas.UserResources.Pages
         {
             _context = context;
         }
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.UserResource == null)
             {
@@ -70,7 +70,7 @@ namespace DevKids_v1.Areas.UserResources.Pages
             return RedirectToPage("./Index");
         }
 
-        private bool UserResourceExists(string id)
+        private bool UserResourceExists(int id)
         {
           return _context.UserResource.Any(e => e.Id == id);
         }

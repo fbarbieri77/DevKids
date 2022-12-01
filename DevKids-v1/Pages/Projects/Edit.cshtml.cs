@@ -31,7 +31,7 @@ namespace DevKids_v1.Pages.Projects
             Valid = new ValidationHelper.Project();
         }
         
-        public async Task<IActionResult> OnGetAsync(string? id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Project == null)
             {
@@ -83,7 +83,7 @@ namespace DevKids_v1.Pages.Projects
             return RedirectToPage("./Index");
         }
 
-        private bool ProjectExists(string id)
+        private bool ProjectExists(int id)
         {
           return _context.Project.Any(e => e.Id == id);
         }

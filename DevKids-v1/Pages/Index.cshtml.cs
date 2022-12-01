@@ -77,7 +77,7 @@ namespace DevKids_v1.Pages
             return Page();
         }
 
-        public async Task<string?> GetLogoPath(string id)
+        public async Task<string?> GetLogoPath(int id)
         {
             var logoResource = await _context.ProjectResources.
                     FirstOrDefaultAsync(resource => resource.ProjectId == id
@@ -95,6 +95,6 @@ namespace DevKids_v1.Pages
     {
         public string Title { get; set; } = string.Empty;
         public string Path { get; set; } = string.Empty;
-        public string ProjectId { get; set; }
+        public int ProjectId { get; set; }
     }
 }
