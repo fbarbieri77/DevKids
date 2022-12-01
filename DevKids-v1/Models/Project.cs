@@ -24,12 +24,12 @@ namespace DevKids_v1.Models
         public decimal Duration { get; set; }
 
         [Required]
-        [Display(Name = "Code language")]
+        [Display(Name = "Linguagem de programação")]
         [StringLength(15)]
         public string CodeLanguage { get; set; } = string.Empty;
 
         [Required]
-        [Display(Name = "Teaching language")]
+        [Display(Name = "Língua de ensino")]
         [StringLength(15)]
         public string TeachLanguage { get; set; } = string.Empty;
 

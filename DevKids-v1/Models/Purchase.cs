@@ -14,21 +14,21 @@ namespace DevKids_v1.Models
 
 
         [DataType(DataType.Date)]
-        [Display(Name = "Purchase date")]
+        [Display(Name = "Data da Compra")]
         public DateTime DateIn { get; set; }
 
         [DataType(DataType.Date)]
-        [Display(Name = "Refund date")]
+        [Display(Name = "Data do Reembolso")]
         public DateTime DateOut { get; set; }
        
-        [Display(Name = "Confirm Payment?")]
+        [Display(Name = "Confirmar Pagamento?")]
         public bool ConfirmPayment { get; set; }
         
-        [Display(Name = "Project")]
+        [Display(Name = "Projeto")]
         public string ProjectTitle { get; set; } = string.Empty;
         public decimal Amount { get; set; }
 
-        [Display(Name = "Can access resources?")]
+        [Display(Name = "Pode Acessar Aulas?")]
         public bool HasAccess { get; set; }
     }
 }

@@ -21,15 +21,15 @@ namespace DevKids_v1.Models
 
         [Required]
         [StringLength(40)]
-        [Display(Name = "Section Title")]
+        [Display(Name = "Título da Seção")]
         public string SectionTitle { get; set; } = string.Empty;
 
         [Required]
-        [Display(Name = "Section Order")]
+        [Display(Name = "Ordem da Seção")]
         public int SectionOrder { get; set; }
 
         [Required]
-        [Display(Name = "Resource order")]
+        [Display(Name = "Ordem do recurso")]
         public int InSectionOrder { get; set; }
     }
 }
