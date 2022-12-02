@@ -11,20 +11,23 @@ namespace DevKids_v1.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Nome")]
         [StringLength(30)]
         public string Name { get; set; } = string.Empty;
 
         [Required]
+        [Display(Name = "Descição")]
         [StringLength(1000)]
         public string Description { get; set; } = string.Empty;
 
         [Required]
+        [Display(Name = "Duração (hrs)")]
         [Column(TypeName = "decimal(4,1)")]
         //[RegularExpression(@"^(\d+)(,\d{2}|\.\d{2})?$")]
         public decimal Duration { get; set; }
 
         [Required]
-        [Display(Name = "Linguagem de programação")]
+        [Display(Name = "Linguagem")]
         [StringLength(15)]
         public string CodeLanguage { get; set; } = string.Empty;
 
@@ -34,6 +37,7 @@ namespace DevKids_v1.Models
         public string TeachLanguage { get; set; } = string.Empty;
 
         [Required]
+        [Display(Name = "Preço")]
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }

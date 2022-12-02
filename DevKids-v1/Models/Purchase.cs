@@ -26,6 +26,8 @@ namespace DevKids_v1.Models
         
         [Display(Name = "Projeto")]
         public string ProjectTitle { get; set; } = string.Empty;
+        
+        [Display(Name = "Valor")]
         public decimal Amount { get; set; }
 
         [Display(Name = "Pode Acessar Aulas?")]

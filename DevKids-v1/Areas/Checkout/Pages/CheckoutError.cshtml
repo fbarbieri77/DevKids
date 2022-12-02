@@ -1,7 +1,11 @@
 ﻿@page
 @model DevKids_v1.Areas.Checkout.Pages.CheckoutErrorModel
 @{
+    ViewData["Title"] = "Erro no checkout";
 }
+
+<h1>@ViewData["Title"]</h1>
+
 
 <p class="result">
     @Model.ErrorMessage

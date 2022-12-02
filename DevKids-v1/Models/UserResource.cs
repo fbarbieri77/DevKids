@@ -10,6 +10,7 @@ namespace DevKids_v1.Models
         public int ResourceId { get; set; }
 
         [Required]
+        [Display(Name = "Título")]
         [StringLength(40)]
         public string Title { get; set; } = string.Empty;
 
