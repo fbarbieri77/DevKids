@@ -1,15 +1,59 @@
 ﻿@page
 @model DevKids_v1.Areas.Lecture.Pages.IndexModel
 @{
-    ViewData["Title"] = "Lecture";
+    ViewData["Title"] = "Curso";
 }
 
 <h1>@ViewData["Title"]</h1>
-
-<h4>Project</h4>
 <hr />
 
-<div class="modal-body row">
+<div class="shadow bg-gradient rounded text-light">
+    <div class="box-head bg-gradient rounded">
+        <h6>Descrição do Curso</h6>
+    </div>
+    <dl class="row container-fluid" style="padding:15px">
+        <dt class="col-md-2">
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+        <dd class="col-md-10">
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+        <dt class="col-md-2">
+            @Html.DisplayNameFor(model => model.Project.Description)
+        </dt>
+        <dd class="col-md-10">
+            <textarea class="form-conbtrol text-light col-md-10" rows="17" style="background-color:transparent">
+                @Html.DisplayFor(model => model.Project.Description)
+            </textarea>
+        </dd>
+        <dt class="col-md-2">
+            @Html.DisplayNameFor(model => model.Project.Duration)
+        </dt>
+        <dd class="col-md-10">
+            @Html.DisplayFor(model => model.Project.Duration)
+        </dd>
+        <dt class="col-md-2">
+            @Html.DisplayNameFor(model => model.Project.CodeLanguage)
+        </dt>
+        <dd class="col-md-10">
+            @Html.DisplayFor(model => model.Project.CodeLanguage)
+        </dd>
+    </dl>
+</div>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Project.Id" />
+    <input type="hidden" asp-for="Project.Name" />
+    <input type="hidden" asp-for="Project.Price" />
+    <input type="hidden" asp-for="Project.Description" />
+    <input type="hidden" asp-for="Project.CodeLanguage" />
+    <input type="hidden" asp-for="Project.TeachLanguage" />
+    <input type="hidden" asp-for="Project.Duration" />
+    <input type="hidden" asp-for="Project.IsOpenToVote" />
+    <input type="hidden" asp-for="Project.IsActive" />
+</form>
+
+<div class="modal-body row space">
     <div class="col-md-6">
         @{
             if (Model.ProjectResources.Count > 0)
@@ -34,6 +78,7 @@
                             {
                                 <div class="col-md-1">
                                     <form asp-page-handler="Download" class="col-md-1" method="post">
+                                        <input type="hidden" name="ResourceTitle" value="@item.Title" />
                                         <button class="btn btn-secondary" name="Action" value="@item.FileName">Download</button>
                                     </form>
                                 </div>
@@ -42,6 +87,7 @@
                             {
                                 <div class="col-md-1">
                                     <form asp-page-handler="Button" class="col-md-1" method="post">
+                                        <input type="hidden" name="ResourceTitle" value="@item.Title" />
                                         <button class="btn btn-secondary" name="Action" value="@item.FileName">Play</button>
                                     </form>
                                 </div>

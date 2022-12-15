@@ -1,14 +1,9 @@
 ﻿@page
 @model DevKids_v1.Areas.Lecture.Pages.VideoModel
-@{
-    ViewData["Title"] = "Lecture";
-}
 
-<h1>@ViewData["Title"]</h1>
-
-<h4>Project</h4>
+<h4>@ViewData["Title"]</h4>
 <hr />
 
-<div class="embed-responsive embed-responsive-16by9 embed-responsive-4by3">
-    <video src="@Model.FilePath" controls />
+<div class="rounded text-light embed-responsive embed-responsive-16by9 embed-responsive-4by3">
+    <video class="col-md-8 shadow bg-gradient" src="@Model.FilePath" controls />
 </div>

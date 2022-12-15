@@ -8,7 +8,7 @@
 <hr />
 <div class="shadow bg-gradient rounded text-light">
     <div class="box-head bg-gradient rounded">
-        <h6>Dados da Curso</h6>
+        <h6>Descrição do Curso</h6>
     </div>
     <dl class="row container-fluid" style="padding:15px">
         <dt class="col-md-2">
@@ -56,11 +56,11 @@
     <input type="hidden" asp-for="Project.Duration" />
     <input type="hidden" asp-for="Project.IsOpenToVote" />
     <input type="hidden" asp-for="Project.IsActive" />
-
+    <div class="form-group space">
+        <input type="submit" value="Compre com PayPal" class="btn btn-primary" />
+    </div>
 </form>
-<div class="form-group">
-    <input type="submit" value="Compre com PayPal" class="btn btn-primary" />
-</div>
+
 
 <div class="space">
     <a asp-area="" asp-page="./Index">Voltar para a página inicial</a>

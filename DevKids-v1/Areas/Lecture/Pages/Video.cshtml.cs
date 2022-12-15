@@ -13,15 +13,16 @@ namespace DevKids_v1.Areas.Lecture.Pages
         public VideoModel(IConfiguration config)
         {
             _targetFilePath = config.GetValue<string>("StoredFilesFolder");
+            
         }
 
-        public IActionResult OnGet(string? fileName)
+        public IActionResult OnGet(string? fileName, string? title)
         {
             if (fileName == null)
             {
                 return NotFound();
             }
-
+            ViewData["Title"] = title;
             FilePath = Path.Combine(_targetFilePath, fileName);
 
             return Page();

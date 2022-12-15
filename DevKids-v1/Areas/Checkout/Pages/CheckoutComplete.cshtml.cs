@@ -59,11 +59,11 @@ namespace DevKids_v1.Areas.Checkout.Pages
             Purchase = purchase;
             if (Purchase.HasAccess)
             {
-                Status = "Approved";
+                Status = "Aprovado";
             }
             else
             {
-                Status = "Not Approved.";
+                Status = "Não Aprovado.";
             }
 
             return Page();

@@ -6,6 +6,7 @@ using DevKids_v1.Models;
 using Microsoft.AspNetCore.Components.Web;
 using System.IO;
 using Microsoft.AspNetCore.Authorization;
+using System.Text;
 
 namespace DevKids_v1.Areas.Lecture.Pages
 {
@@ -21,12 +22,19 @@ namespace DevKids_v1.Areas.Lecture.Pages
         public string Action { get; set; }
 
         [BindProperty]
+        public string ResourceTitle { get; set; }
+
+        [BindProperty]
+        public Models.Project Project { get; set; }
+
+        [BindProperty]
         public IList<ProjectResource> ProjectResources { get; set; }
 
         public IndexModel(RazorPagesAuth context, IConfiguration config)
         {
             _context = context;
             _targetFilePath = config.GetValue<string>("StoredFilesPath");
+            Project = new Project();
         }
 
         public async Task<IActionResult> OnGet(int? id)
@@ -35,6 +43,15 @@ namespace DevKids_v1.Areas.Lecture.Pages
             {
                 return NotFound();
             }
+
+            var project = await _context.Project.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (project == null)
+            {
+                return Page();
+            }
+
+            Project = project;
 
             var projectresources = await _context.ProjectResources.
                                             Where(m => m.ProjectId == id).
@@ -54,12 +71,12 @@ namespace DevKids_v1.Areas.Lecture.Pages
 
         public IActionResult OnPostButton()
         {
-            if (ModelState.IsValid == false)
+         /*   if (!ModelState.IsValid)
             {
                 return Page();
             }
-
-            return RedirectToPage("./Video/", new { fileName = Action });
+         */
+            return RedirectToPage("./Video/", new { fileName = Action, title = ResourceTitle});
         }
 
         public IActionResult OnPostDownload()
@@ -69,7 +86,10 @@ namespace DevKids_v1.Areas.Lecture.Pages
             {
                 var projectresource = ProjectResources.FirstOrDefault(m => m.FileName == Action);
                 byte[] bytes = System.IO.File.ReadAllBytes(filePath);
-                return File(bytes, "application/octet-stream", Action);
+                StringBuilder fileName = new StringBuilder();
+                fileName.Append(ResourceTitle);
+                fileName.Append(Action.Substring(Action.IndexOf("."), Action.Length - Action.IndexOf(".")));
+                return File(bytes, "application/octet-stream", fileName.ToString());
             }
             else
             {
